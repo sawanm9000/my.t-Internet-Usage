@@ -4,7 +4,7 @@ Visualize internet usage data (MyT subscribers only)
 
 ## Download
 
-[Windows](http://www.example.com)
+[Windows](https://github.com/sawanm9000/MyT-Internet-Usage/releases/download/1.0.0-beta/Internet.Usage.Setup.1.0.0-beta.exe)
 
 ## Known bugs
 
