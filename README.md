@@ -1,6 +1,7 @@
 # MyT Internet Usage
 
-Visualize internet usage data (MyT subscribers only)
+Visualize internet usage data (MyT subscribers only).
+![Internet Usage screenshot](https://user-images.githubusercontent.com/25604837/146207862-459657a4-e940-43d1-b10f-b296b094ff1a.png)
 
 ## Download
 
