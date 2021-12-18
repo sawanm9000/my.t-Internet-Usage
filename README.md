@@ -6,7 +6,7 @@ Visualize internet usage data (my.t subscribers only).
 ## Download
 
 [Windows](https://github.com/sawanm9000/my.t-Internet-Usage/releases/download/1.1.0-beta/Internet.Usage.Setup.1.1.0-beta-win.exe)
-[Linux}](https://github.com/sawanm9000/my.t-Internet-Usage/releases/download/1.1.0-beta/Internet.Usage-1.1.0-beta-linux.AppImage)
+[Linux](https://github.com/sawanm9000/my.t-Internet-Usage/releases/download/1.1.0-beta/Internet.Usage-1.1.0-beta-linux.AppImage)
 
 ## Known bugs
 
