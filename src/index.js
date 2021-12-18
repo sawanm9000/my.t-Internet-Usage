@@ -96,7 +96,7 @@ $('.show-log-btn').on('click', (e) => {
 
 $('.homepage-btn').on('click', function(event) {
   event.preventDefault();
-  electron.shell.openExternal('https://github.com/sawanm9000/MyT-Internet-Usage');
+  electron.shell.openExternal('https://github.com/sawanm9000/my.t-Internet-Usage');
 });
 
 async function createConfigFile(userId, password, cap, browser) {

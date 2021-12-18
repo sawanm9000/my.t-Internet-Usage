@@ -1,7 +1,7 @@
 {
   "name": "internet-usage",
   "version": "1.1.0-beta",
-  "description": "Scrapes MyT web site for internet usage information",
+  "description": "Scrapes my.t web site for internet usage information",
   "main": "electron_main.js",
   "dependencies": {
     "jquery": "^3.6.0",
@@ -47,9 +47,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sawanm9000/MyT-Internet-Usage"
+    "url": "git+https://github.com/sawanm9000/my.t-Internet-Usage"
   },
   "author": "sawanm9000",
   "license": "MIT",
-  "homepage": "https://github.com/sawanm9000/MyT-Internet-Usage"
+  "homepage": "https://github.com/sawanm9000/my.t-Internet-Usage"
 }

@@ -1,11 +1,12 @@
-# MyT Internet Usage
+# my.t Internet Usage
 
-Visualize internet usage data (MyT subscribers only).
+Visualize internet usage data (my.t subscribers only).
 ![Internet Usage screenshot](https://user-images.githubusercontent.com/25604837/146207862-459657a4-e940-43d1-b10f-b296b094ff1a.png)
 
 ## Download
 
-[Windows](https://github.com/sawanm9000/MyT-Internet-Usage/releases/download/1.0.0-beta/Internet.Usage.Setup.1.0.0-beta.exe)
+[Windows](https://github.com/sawanm9000/my.t-Internet-Usage/releases/download/1.1.0-beta/Internet.Usage.Setup.1.1.0-beta-win.exe)
+[Linux}](https://github.com/sawanm9000/my.t-Internet-Usage/releases/download/1.1.0-beta/Internet.Usage-1.1.0-beta-linux.AppImage)
 
 ## Known bugs
 
