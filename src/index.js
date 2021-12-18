@@ -620,8 +620,7 @@ async function plotDataToChart(month) {
 			displayModeBar: false
 		};
 
-		// Plotly.newPlot(chart, dataToPlot, layout, config);
-		Plotly.react(chart, dataToPlot, layout, config);
+		Plotly.newPlot(chart, dataToPlot, layout, config);
     $('.logger-container').hide();
   });
 }

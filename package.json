@@ -1,6 +1,6 @@
 {
   "name": "internet-usage",
-  "version": "1.0.0-beta",
+  "version": "1.1.0-beta",
   "description": "Scrapes MyT web site for internet usage information",
   "main": "electron_main.js",
   "dependencies": {
@@ -25,13 +25,18 @@
     "start": "npm run babel_build & electron .",
     "start_dev": "babel-node --presets env,stage-3 src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist": "npm run babel_build & npm run copy-babel-output & electron-builder"
+    "dist-win": "npm run babel_build & npm run copy-babel-output & electron-builder build --win",
+    "dist-linux": "npm run babel_build & npm run copy-babel-output & electron-builder build --linux"
   },
   "build": {
     "appId": "gr.sawanm9000.internet-usage",
     "productName": "Internet Usage",
     "win": {
       "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility"
     },
     "mac": {
       "target": "dmg"
