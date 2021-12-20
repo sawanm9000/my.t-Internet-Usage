@@ -497,6 +497,9 @@ function plotTrendLine() {
   const thisMonth = new Date();
   if (lastDateInDataset.getMonth() !== thisMonth.getMonth()) return;
 
+  dataToPlot[1].x = [];
+  dataToPlot[1].y = [];
+
   // Populate dataToPlot markers for trendLine
   for (let i = dataToPlot[0].x.length - 1; i >= dataToPlot[0].x.length - trendLineAvg && i > 0; i--) {
 
@@ -509,8 +512,9 @@ function plotTrendLine() {
     const hour = new Date(xTime).getHours();
     const minute = new Date(xTime).getMinutes();
     const second = new Date(xTime).getSeconds();
-    dataToPlot[1]['x'].push(`${year}-${month}-${date} ${hour}:${minute < 10 ? '0' + minute : minute}:${second < 10 ? '0' + second : second}`);
-    dataToPlot[1]['y'].push(dataToPlot[0].y[i]);
+
+    dataToPlot[1].x.push(`${year}-${month}-${date} ${hour}:${minute < 10 ? '0' + minute : minute}:${second < 10 ? '0' + second : second}`);
+    dataToPlot[1].y.push(dataToPlot[0].y[i]);
   }
 
   // Populate trendLineData: []
@@ -530,6 +534,10 @@ function plotTrendLine() {
 
   const secondDate = -yIntercept / gradient;
   const valAtSecondDate = 0;
+  
+  dataToPlot[2].x = []
+  dataToPlot[2].y = []
+  
   dataToPlot[2].x.push(Math.round(firstDate));
   dataToPlot[2].x.push(Math.round(secondDate));
   dataToPlot[2].y.push(valAtFirstDate);
@@ -621,6 +629,7 @@ async function plotDataToChart(month) {
 		};
 
 		Plotly.newPlot(chart, dataToPlot, layout, config);
+
     $('.logger-container').hide();
   });
 }
