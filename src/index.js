@@ -612,7 +612,7 @@ async function plotDataToChart(month) {
 			},
 			yaxis: {
 				gridcolor: '#333',
-				dtick: 10,
+				dtick: credentials.cap <= 300 ? 10 : credentials.cap < 10000 ? 100 : 500,
 				rangemode: 'nonnegative',
 				range: [0, credentials.cap],
 				fixedrange: true,
