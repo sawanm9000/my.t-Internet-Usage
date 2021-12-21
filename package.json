@@ -1,6 +1,6 @@
 {
   "name": "internet-usage",
-  "version": "1.1.1-beta",
+  "version": "1.1.2-beta",
   "description": "Scrapes my.t web site for internet usage information",
   "main": "electron_main.js",
   "dependencies": {
@@ -22,11 +22,11 @@
   "scripts": {
     "babel_build": "babel --source-maps --out-dir=babel-output src",
     "copy-babel-output": "node import-babel-scripts.js",
-    "start": "npm run babel_build & electron .",
+    "start": "yarn run babel_build & electron .",
     "start_dev": "babel-node --presets env,stage-3 src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist-win": "npm run babel_build & npm run copy-babel-output & electron-builder build --win",
-    "dist-linux": "npm run babel_build & npm run copy-babel-output & electron-builder build --linux"
+    "dist-win": "yarn run babel_build & yarn run copy-babel-output & electron-builder build --win",
+    "dist-linux": "yarn run babel_build & yarn run copy-babel-output & electron-builder build --linux"
   },
   "build": {
     "appId": "gr.sawanm9000.internet-usage",

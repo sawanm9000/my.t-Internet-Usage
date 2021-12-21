@@ -378,11 +378,9 @@ async function fetchUsageData(userIdVal, passwordVal, month) {
 	for (let i = 0; i < tableJSON[0].length; i++) {
 		delete tableJSON[0][i]['IP  Address'];
 		delete tableJSON[0][i]['Uploaded Volume'];
-		delete tableJSON[0][i]['Total Volume(KB)'];
 		delete tableJSON[0][i].Charge;
 
-		tableJSON[0][i]['Time Online'] =
-			tableJSON[0][i]['Time OnlineCall Duration'];
+		tableJSON[0][i]['Time Online'] = tableJSON[0][i]['Time OnlineCall Duration'];
 		delete tableJSON[0][i]['Time OnlineCall Duration'];
 	}
 
@@ -561,7 +559,7 @@ async function plotDataToChart(month) {
 
       const pastVal = flattened.slice(flattened.length - trendLineAvg, flattened.length)
       const sumOfPastVal = pastVal.reduce((total, downVol) => {
-        return total + parseFloat(downVol['Downloaded Volume']);
+        return total + parseFloat(downVol['Total Volume(KB)']);
       }, 0)
 
       const averageOfPastVal = sumOfPastVal / trendLineAvg;
@@ -580,8 +578,8 @@ async function plotDataToChart(month) {
 					remainingVolume = credentials.cap;
         } 
         
-        dataToPlot[0]['y'].push( remainingVolume - parseInt(flattened[i]['Downloaded Volume']) / 1024 / 1024 );
-        remainingVolume -= parseInt(flattened[i]['Downloaded Volume']) / 1024 / 1024;
+        dataToPlot[0]['y'].push( remainingVolume - parseInt(flattened[i]['Total Volume(KB)']) / 1024 / 1024 );
+        remainingVolume -= parseInt(flattened[i]['Total Volume(KB)']) / 1024 / 1024;
 
 				const timeOnlineToMinutesArr = flattened[i]['Time Online'].split(':');
 				dataToPlot[0]['width'].push( (parseInt(timeOnlineToMinutesArr[0]) * 60 + parseInt(timeOnlineToMinutesArr[1])) * 60 * 1000 - 2880000 );
