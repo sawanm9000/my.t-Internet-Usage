@@ -559,7 +559,7 @@ async function plotDataToChart(month) {
 
       const pastVal = flattened.slice(flattened.length - trendLineAvg, flattened.length)
       const sumOfPastVal = pastVal.reduce((total, downVol) => {
-        return total + parseFloat(downVol['Total Volume(KB)']);
+        return total + parseFloat(downVol['Downloaded Volume']);
       }, 0)
 
       const averageOfPastVal = sumOfPastVal / trendLineAvg;
