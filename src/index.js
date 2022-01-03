@@ -486,7 +486,7 @@ let dataToPlot = [
   }
 ];
 
-const trendLineData = [];
+let trendLineData = [];
 
 function plotTrendLine() {
   const lastDateInDataset = new Date(dataToPlot[0].x[dataToPlot[0].x.length - 1]);
@@ -499,7 +499,7 @@ function plotTrendLine() {
   dataToPlot[1].y = [];
 
   // Populate dataToPlot markers for trendLine
-  for (let i = dataToPlot[0].x.length - 1; i >= dataToPlot[0].x.length - trendLineAvg && i > 0; i--) {
+  for (let i = dataToPlot[0].x.length - 1; i >= dataToPlot[0].x.length - trendLineAvg && i > 0 && new Date(dataToPlot[0].x[i]).getMonth() === new Date().getMonth(); i--) {
 
     const toPushX = new Date(dataToPlot[0].x[i]).getTime();
     const xTime = toPushX + (dataToPlot[0].width[i] / 2);
@@ -514,6 +514,8 @@ function plotTrendLine() {
     dataToPlot[1].x.push(`${year}-${month}-${date} ${hour}:${minute < 10 ? '0' + minute : minute}:${second < 10 ? '0' + second : second}`);
     dataToPlot[1].y.push(dataToPlot[0].y[i]);
   }
+
+  trendLineData = [];
 
   // Populate trendLineData: []
   for (let i = 0; i < dataToPlot[1].x.length; i++) {
@@ -533,8 +535,8 @@ function plotTrendLine() {
   const secondDate = -yIntercept / gradient;
   const valAtSecondDate = 0;
   
-  dataToPlot[2].x = []
-  dataToPlot[2].y = []
+  dataToPlot[2].x = [];
+  dataToPlot[2].y = [];
   
   dataToPlot[2].x.push(Math.round(firstDate));
   dataToPlot[2].x.push(Math.round(secondDate));
@@ -569,6 +571,8 @@ async function plotDataToChart(month) {
 			let remainingVolume = credentials.cap;
 
       // Populate dataToPlot[0]
+      dataToPlot[0].x = [];
+      dataToPlot[0].y = [];
 			for (let i = 0; i < flattened.length; i++) {
 				const date = new Date(flattened[i]['Date']);
 				const toPushX = `${date.getFullYear()}-${ date.getMonth() + 1 }-${date.getDate()} ${flattened[i]['From']}`;
